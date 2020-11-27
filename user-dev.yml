@@ -1,0 +1,28 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: microservice-user
+  datasource:
+    # 当前数据源操作类型
+#    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:6330/db2019?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 1qaz2wsx???
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+eureka:
+  client:
+    fetch-registry: true  #作为客户端需要注册到Eureka
+    register-with-eureka: true  #作为客户端需要从Eureka获取注册信息
+    service-url:  # 客户端注册地址
+      defaultZone: http://127.0.0.1:9003/eureka #,http://127.0.0.1:9004/eureka
+  instance:
+    prefer-ip-address: true #优先使用该服务的IP地址注册到Eureka，在生产环境改为true
+    lease-renewal-interval-in-seconds: 5     #服务续约间隔时间（心跳时间默认：30s）
+    lease-expiration-duration-in-seconds: 10  #服务失效时间，默认90s
