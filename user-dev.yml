@@ -5,7 +5,7 @@ spring:
   application:
     name: microservice-user
   datasource:
-    # 当前数据源操作类型
+    # 当前数据源操作类型111
 #    type: com.alibaba.druid.pool.DruidDataSource
     # mysql驱动类
     driver-class-name: com.mysql.cj.jdbc.Driver
